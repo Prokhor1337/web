@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background: deeppink;
+    background: rgba(255, 20, 147, 0.53);
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -30,14 +30,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: deeppink;
+    color: rgba(255, 20, 147, 0.53);
     text-decoration: none;
     padding: 10px 15px;
     display: block;
 }
 
 nav ul li a:hover {
-    background: deeppink;
+    background: rgba(255, 20, 147, 0.53);
 }
 
 main {
@@ -60,7 +60,7 @@ th, td {
 }
 
 footer {
-    background: darkblue;
+    background: rgba(255, 20, 147, 0.53);
     color: #fff;
     text-align: center;
     padding: 10px 0;
