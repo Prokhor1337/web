@@ -1,19 +1,29 @@
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    line-height: 1.5;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
 }
 
 header {
     background: rgba(255, 20, 147, 0.53);
-    color: white;
-    padding: 15px;
+    color: #fff;
     text-align: center;
+    padding: 10px 0;
 }
 
-nav {
-    background: #333;
+header h1 {
+    margin: 0;
 }
 
 nav ul {
@@ -22,40 +32,53 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    background: rgba(0, 0, 0, 0.54);
 }
 
-nav li a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
     color: rgba(255, 20, 147, 0.9);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
 }
 
-nav li a:hover {
-    background: rgba(255, 20, 147, 0.6);
+nav ul li a:hover {
+    background: rgba(255, 20, 147, 0.53);
     color: white;
 }
 
-main {
-    padding: 20px;
-}
-
 table {
-    width: 100%;
+    width: 80%;
+    margin: 20px auto;
     border-collapse: collapse;
-    margin-top: 15px;
+    font-size: 16px;
+    background: #fff;
 }
 
-th, td {
+th {
+    background: rgba(255, 20, 147, 0.53);
+    color: white;
+    padding: 10px;
+}
+
+td {
     border: 1px solid #444;
     padding: 8px;
     text-align: center;
 }
 
+tr:nth-child(even) td {
+    background: #f9f9f9;
+}
+
 footer {
     background: rgba(255, 20, 147, 0.53);
-    color: white;
+    color: #fff;
     text-align: center;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 10px 0;
+    margin-top: auto;
 }
