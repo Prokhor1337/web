@@ -8,6 +8,8 @@ body {
     flex-direction: column;
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background: #f3f3f3;
+    color: #333;
 }
 
 main {
@@ -20,6 +22,7 @@ header {
     color: #fff;
     text-align: center;
     padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 header h1 {
@@ -44,6 +47,7 @@ nav ul li a {
     text-decoration: none;
     padding: 10px 15px;
     display: block;
+    border-radius: 5px;
 }
 
 nav ul li a:hover {
@@ -57,6 +61,9 @@ table {
     border-collapse: collapse;
     font-size: 16px;
     background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 th {
@@ -75,10 +82,22 @@ tr:nth-child(even) td {
     background: #f9f9f9;
 }
 
+form {
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 footer {
     background: rgba(255, 20, 147, 0.53);
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
