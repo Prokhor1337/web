@@ -38,10 +38,6 @@ nav ul {
     background: rgba(0, 0, 0, 0.54);
 }
 
-nav ul li {
-    margin: 0;
-}
-
 nav ul li a {
     color: rgba(255, 20, 147, 0.9);
     text-decoration: none;
@@ -80,15 +76,6 @@ td {
 
 tr:nth-child(even) td {
     background: #f9f9f9;
-}
-
-form {
-    background: #fff;
-    padding: 20px;
-    margin: 20px auto;
-    width: 50%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 footer {
