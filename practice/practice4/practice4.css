@@ -10,8 +10,7 @@ body {
 
 .keyboard {
     display: grid;
-    grid-template-columns: auto 120px 260px;
-    align-items: start;
+    grid-template-columns: auto 120px 240px;
     gap: 25px;
     padding: 40px 50px;
     background: #d7d7d7;
@@ -40,7 +39,6 @@ body {
     box-shadow: 0 2px 3px rgba(0,0,0,0.3);
     height: 60px;
     min-width: 60px;
-    text-align: center;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -62,8 +60,6 @@ body {
 .small { font-size: 12px; padding: 2px; }
 
 .nav-keys {
-    display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     gap: 10px;
 }
@@ -85,6 +81,12 @@ body {
 
 .numpad {
     display: grid;
+    grid-template-areas:
+        "num div mul sub"
+        "seven eight nine add"
+        "four five six add"
+        "one two three enter"
+        "zero zero dot enter";
     grid-template-columns: repeat(4, 60px);
     grid-template-rows: repeat(5, 60px);
     gap: 6px;
@@ -96,4 +98,16 @@ body {
 .numpad .key:nth-child(12) { /* Enter */
     grid-row: span 2;
     height: 126px;
+}
+
+.keyboard {
+    grid-template-columns: 1fr 1fr 1fr; /* Сделаем сетку 3 колонки */
+}
+
+.nav-keys {
+    grid-column: 2;
+}
+
+.numpad {
+    grid-column: 3;
 }
