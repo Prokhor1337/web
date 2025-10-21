@@ -11,8 +11,9 @@ body {
 .keyboard {
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;
+    align-items: end;
     gap: 20px;
-    padding: 25px;
+    padding: 25px 40px;
     background: #d7d7d7;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
@@ -63,6 +64,11 @@ body {
 .small { font-size: 12px; padding: 2px; }
 .arrow { font-weight: bold; font-size: 18px; }
 
+.nav-keys {
+    justify-content: flex-end;
+    gap: 10px;
+}
+
 .arrows {
     display: grid;
     grid-template-areas:
@@ -70,9 +76,28 @@ body {
     "left down right";
     gap: 6px;
     justify-content: center;
+    margin-top: 40px;
 }
 
 .arrow.up { grid-area: up; }
 .arrow.left { grid-area: left; }
 .arrow.down { grid-area: down; }
 .arrow.right { grid-area: right; }
+
+.numpad {
+    justify-content: flex-end;
+    padding-right: 10px;
+    gap: 6px;
+}
+
+.numpad .row {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    justify-content: center;
+    gap: 6px;
+}
+
+.numpad .tall {
+    grid-row: span 2;
+    height: 126px;
+}
