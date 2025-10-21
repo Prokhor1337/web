@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: #f0f0f0;
+    background: #f3f3f3;
     font-family: 'Roboto Mono', monospace;
     display: flex;
     justify-content: center;
@@ -9,14 +9,25 @@ body {
 }
 
 .keyboard {
-    display: grid;
-    grid-template-columns: repeat(22, 1fr);
-    gap: 6px;
+    display: flex;
+    gap: 20px;
     padding: 25px;
     background: #d7d7d7;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    max-width: 1400px;
+}
+
+/* --- Основна клавіатура --- */
+.main-keys {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.row {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 6px;
 }
 
 .key {
@@ -44,9 +55,37 @@ body {
     box-shadow: 0 1px 2px rgba(0,0,0,0.4);
 }
 
-.wide { grid-column: span 2; }
-.wider { grid-column: span 3; }
-.space { grid-column: span 7; }
-.tall { grid-row: span 2; height: 130px; }
+/* --- Додаткові розміри клавіш --- */
+.wide { width: 120px; }
+.wider { width: 150px; }
+.space { width: 400px; }
+.tall { height: 130px; }
 .small { font-size: 12px; padding: 2px; }
 .arrow { font-weight: bold; font-size: 18px; }
+
+/* --- Блок навігації --- */
+.nav-keys {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+/* --- Стрілки --- */
+.arrows {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    gap: 6px;
+    justify-content: center;
+}
+
+/* --- NumPad --- */
+.numpad {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.numpad .row {
+    display: flex;
+    gap: 6px;
+}
