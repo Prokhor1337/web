@@ -60,8 +60,9 @@ body {
 .small { font-size: 12px; padding: 2px; }
 
 .nav-keys {
-    justify-content: flex-start;
-    gap: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .nav-keys .key {
@@ -102,6 +103,14 @@ body {
 .numpad .key:nth-child(12) {
     grid-row: span 2;
     height: 126px;
+}
+
+.numpad .key:nth-child(15) {
+    grid-column: 4;
+}
+
+.numpad .key:nth-child(16) {
+    grid-column: span 2;
 }
 
 .keyboard {
