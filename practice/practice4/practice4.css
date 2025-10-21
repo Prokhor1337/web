@@ -11,7 +11,7 @@ body {
 .keyboard {
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;
-    align-items: end;
+    align-items: center;
     gap: 20px;
     padding: 25px 40px;
     background: #d7d7d7;
@@ -72,11 +72,13 @@ body {
 .arrows {
     display: grid;
     grid-template-areas:
-    ". up ."
-    "left down right";
+        ". up ."
+        "left down right";
     gap: 6px;
     justify-content: center;
-    margin-top: 40px;
+    align-items: end;
+    margin-top: 0;
+    margin-bottom: 8px;
 }
 
 .arrow.up { grid-area: up; }
@@ -86,7 +88,8 @@ body {
 
 .numpad {
     justify-content: flex-end;
-    padding-right: 10px;
+    align-self: center;
+    padding-right: 0;
     gap: 6px;
 }
 
