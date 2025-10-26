@@ -10,23 +10,23 @@ body {
 
 .keyboard {
     display: grid;
-    grid-template-columns: auto 120px 240px;
+    grid-template-columns: 3fr 1fr 1fr;
     gap: 20px;
-    padding: 40px 20px;
+    padding: 40px;
     background: #d7d7d7;
     border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    width: 1400px;
 }
 
-.main-keys, .nav-keys, .numpad {
+.main-keys {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
 .row {
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     gap: 6px;
 }
 
@@ -36,44 +36,54 @@ body {
     align-items: center;
     background: #fdfdfd;
     border-radius: 6px;
-    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
-    height: 60px;
-    min-width: 60px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    height: 55px;
+    min-width: 55px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .key:hover {
     background: #e6e6e6;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
 }
 
 .key:active {
     background: #ccc;
     transform: translateY(2px);
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.wide { width: 120px; }
-.wider { width: 150px; }
-.space { width: 400px; }
+.backspace { width: 120px; }
+.tab { width: 120px; }
+.caps { width: 120px; }
+.enter { width: 115px; }
+.shift-left { width: 135px; }
+.shift-right { width: 160px; }
+.space { width: 380px; }
+.ctrl, .win, .alt, .fn, .menu { width: 70px; }
 .small { font-size: 12px; padding: 2px; }
+.gap { width: 20px; }
 
 .nav-keys {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    align-items: center;
+    gap: 6px;
 }
 
-.nav-keys .key {
-    width: 60px;
+.nav-keys .rows-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
 }
 
 .arrows {
+    margin-top: 52px;
     display: grid;
     grid-template-areas:
-        ". up ."
-        "left down right";
+      ". up ."
+      "left down right";
     gap: 6px;
     justify-content: center;
     align-items: center;
@@ -86,41 +96,26 @@ body {
 
 .numpad {
     display: grid;
-    grid-template-areas:
-        "num div mul sub"
-        "seven eight nine add"
-        "four five six add"
-        "one two three enter"
-        "zero zero dot enter";
-    grid-template-columns: repeat(4, 60px);
-    grid-template-rows: repeat(5, 60px);
+    grid-template-columns: repeat(4, 55px);
+    grid-template-rows: repeat(5, 55px);
     gap: 6px;
     justify-content: center;
-    align-items: start;
+    align-items: center;
+    margin-top: 63px;
 }
 
-.numpad .key:nth-child(8),
-.numpad .key:nth-child(12) {
+.numpad .plus {
     grid-row: span 2;
-    height: 126px;
+    height: 116px;
 }
 
-.numpad .key:nth-child(15) {
+.numpad .enter {
     grid-column: 4;
+    grid-row: 4 / span 2;
+    height: 116px;
+    width: 55px;
 }
 
-.numpad .key:nth-child(16) {
+.numpad .zero {
     grid-column: span 2;
-}
-
-.keyboard {
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.nav-keys {
-    grid-column: 2;
-}
-
-.numpad {
-    grid-column: 3;
 }
