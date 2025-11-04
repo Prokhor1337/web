@@ -7,27 +7,84 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="site-header">
-    <h1>Чертілін Прохор</h1>
-    <nav class="main-nav">
-        <ul>
-            <li><a href="index.html">Головна</a></li>
-            <li><a href="about.html">Про мене</a></li>
-            <li><a href="practice/index.html">Практичні роботи</a></li>
-            <li><a href="labs/index.html">Лабораторні</a></li>
-        </ul>
-    </nav>
+<header>
+    <div class="container header-content">
+        <div class="logo">Чертілін Прохор</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about.html">Про мене</a></li>
+                <li><a href="labs/index.html">Лабораторні</a></li>
+                <li><a href="practice/index.html">Практичні</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <main>
-    <section>
-        <h2>Ласкаво просимо</h2>
-        <p>Коротка інформація про студента: ТЦР-21, 0501464921</p>
-    </section>
+    <div class="container">
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Hi, I am Prokhor,<br>Creative Technologist</h1>
+                <p>Студент групи ТЦР-21. На цьому сайті зібрані всі лабораторні та практичні роботи з дисципліни "Веб-технології та веб-дизайн".</p>
+                <button class="btn-resume">Download Resume</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://cs13.pikabu.ru/post_img/big/2023/02/28/5/167756827611024076.jpg" alt="Profile">
+            </div>
+        </section>
+
+        <section class="recent-posts">
+            <div class="section-header">
+                <h2>Лабораторні роботи</h2>
+                <a href="labs/index.html" class="view-all">Переглянути всі</a>
+            </div>
+            <div class="cards">
+                <article class="card">
+                    <h3><a href="labs/lab2/lab2.html">Лабораторна робота №2</a></h3>
+                    <p>Основи HTML та структура документа.</p>
+                    <span>Вересень 2024</span>
+                </article>
+                <article class="card">
+                    <h3><a href="labs/lab3/lab3.html">Лабораторна робота №3</a></h3>
+                    <p>Використання CSS для стилізації сторінок.</p>
+                    <span>Жовтень 2024</span>
+                </article>
+                <article class="card">
+                    <h3><a href="labs/lab4/lab4.html">Лабораторна робота №4</a></h3>
+                    <p>Розмітка блоків і компонування елементів.</p>
+                    <span>Листопад 2024</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="featured-works">
+            <h2>Практичні роботи</h2>
+            <div class="works">
+                <article class="work">
+                    <img src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/6969/production/_93558962_istock-586160412.jpg.webp" alt="">
+                    <div class="work-text">
+                        <h3><a href="practice/practice1.html">Практична робота №1</a></h3>
+                        <span>HTML</span>
+                        <p>Основи створення вебсторінки.</p>
+                    </div>
+                </article>
+                <article class="work">
+                    <img src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/6969/production/_93558962_istock-586160412.jpg.webp" alt="">
+                    <div class="work-text">
+                        <h3><a href="practice/practice4/practice4.html">Практична робота №4</a></h3>
+                        <span>CSS</span>
+                        <p>Розміщення контенту та робота з каскадними стилями.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
 </main>
 
 <footer>
-    <p>Контакти: chertilin2006@gmail.com · GitHub: <a href="https://github.com/Prokhor1337">Prokhor1337</a></p>
+    <p>© 2025 Чертілін Прохор · chertilin2006@gmail.com ·
+        <a href="https://github.com/Prokhor1337">GitHub: Prokhor1337</a></p>
 </footer>
 </body>
 </html>

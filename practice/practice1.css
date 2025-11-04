@@ -1,0 +1,114 @@
+/* === PRACTICE 1 STYLES === */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f3f3f3;
+    color: #333;
+}
+
+/* Головна частина сторінки */
+main {
+    flex: 1;
+    padding: 20px;
+    padding-bottom: 60px;
+}
+
+/* Шапка */
+header {
+    background: rgba(255, 20, 147, 0.53);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Навігація */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.54);
+}
+
+nav ul li a {
+    color: rgba(255, 20, 147, 0.9);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 20, 147, 0.53);
+    color: white;
+}
+
+/* Таблиці */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-size: 16px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+th {
+    background: rgba(255, 20, 147, 0.53);
+    color: white;
+    padding: 10px;
+}
+
+td {
+    border: 1px solid #444;
+    padding: 8px;
+    text-align: center;
+}
+
+tr:nth-child(even) td {
+    background: #f9f9f9;
+}
+
+/* Кнопка */
+button, .btn {
+    background: rgba(255, 20, 147, 0.53);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background: rgba(255, 20, 147, 0.7);
+}
+
+
+footer {
+    background: rgba(255, 20, 147, 0.53);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
