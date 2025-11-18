@@ -1,178 +1,173 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
-.planner {
-    background: #fff;
-    max-width: 1200px;
-    width: 100%;
-    border: 2px solid #ccc;
-    padding: 25px 30px;
-}
-
-header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    column-gap: 30px;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 15px;
-    margin-bottom: 25px;
-}
-
-header h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.4rem;
-    letter-spacing: 2px;
-    margin: 0;
-    align-self: center;
-}
-
-.header-fields {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 20px;
-    font-size: 0.95rem;
-    flex-wrap: wrap;
-}
-
-.header-fields label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap;
-}
-
-.small-input {
-    border: none;
-    border-bottom: 1px solid #555;
-    width: 140px;
-    margin-left: 5px;
-    outline: none;
-    background: transparent;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 25px;
-}
-
-.todo h2 {
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    font-size: 1.3rem;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 8px;
-}
-
-.list h3 {
-    margin-top: 18px;
-    font-size: 0.95rem;
+h1, h3 {
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
     font-weight: 700;
 }
 
-.list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+h3 {
+    font-size: 0.9em;
+    color: black;
 }
 
-.list li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 8px 0;
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    vertical-align: middle;
 }
 
-.list input[type="text"] {
+input[type="text"] {
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
     border: none;
-    border-bottom: 1px solid #ccc;
-    flex-grow: 1;
+    border-bottom: 2px solid #eee;
+    padding: 2px;
+}
+input[type="text"]:focus {
     outline: none;
-    font-size: 0.9rem;
-    padding: 3px 4px;
+    border-color: #ccc;
 }
 
-.week {
+.planner {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 267px;
-    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 1200px;
+    height: 800px;
+    background-color: #fff;
+    border: 3px solid black;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.day {
-    border: 1px solid #ccc;
-    padding: 12px;
+.plan-header {
+    grid-area: 1 / 1 / 2 / 5;
+    border-bottom: 3px solid black;
+}
+.plan-sidebar {
+    grid-area: 2 / 1 / 6 / 2;
+    border-right: 3px solid black;
+}
+
+.monday     { grid-area: 2 / 2 / 4 / 3; }
+.tuesday    { grid-area: 2 / 3 / 4 / 4; }
+.wednesday  { grid-area: 2 / 4 / 4 / 5; }
+.thursday   { grid-area: 4 / 2 / 6 / 3; }
+.friday     { grid-area: 4 / 3 / 6 / 4; }
+.saturday   { grid-area: 4 / 4 / 5 / 5; }
+.sunday     { grid-area: 5 / 4 / 6 / 5; }
+
+.plan-header, .plan-sidebar, .weekday, .weekend {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.weekday, .weekend {
     display: flex;
     flex-direction: column;
-    background-color: #fafafa;
 }
 
-.day h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.05rem;
+.monday, .tuesday, .thursday, .friday {
+    border-right: 1px solid #ccc;
+}
+.monday, .tuesday, .wednesday {
+    border-bottom: 1px solid #ccc;
+}
+.saturday {
+    border-bottom: 1px solid #ccc;
+}
+
+.plan-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ccc;
-    margin: 0 0 6px;
-    padding-bottom: 5px;
 }
-
-textarea {
-    flex-grow: 1;
-    border: none;
-    resize: none;
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.95rem;
-    outline: none;
-    background: transparent;
-}
-
-.section {
-    border: 1px solid #ccc;
-    background-color: #fafafa;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-}
-
-.section h3, .todo h2 {
+.plan-title {
+    font-size: 2.5em;
     margin: 0;
 }
-
-@media (max-width: 900px) {
-    header {
-        grid-template-columns: 1fr;
-        row-gap: 12px;
-        align-items: start;
-    }
-    .header-fields {
-        justify-content: flex-start;
-    }
-    .grid {
-        grid-template-columns: 1fr;
-    }
-    .week {
-        grid-template-columns: 1fr 1fr;
-    }
+.header-field {
+    font-size: 0.8em;
+    color: black;
+    display: flex;
+    align-items: center;
 }
 
-@media (max-width: 600px) {
-    .week {
-        grid-template-columns: 1fr;
-    }
+.header-field.small {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.header-field input[type="text"] {
+    width: 150px;
+    margin-left: 10px;
+    font-size: 1.1em;
+    border-bottom: 1px solid #999;
+}
+
+.header-field input {
+    margin-left: 10px;
+}
+
+.plan-sidebar {
+    overflow-y: auto;
+}
+.task-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+.task-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.task-list input[type="text"] {
+    flex-grow: 1;
+    height: 20px;
+    margin-left: 10px;
+    cursor: text;
+    transition: border-color 0.2s;
+    border-bottom: 2px solid #eee;
+}
+
+.task-list input[type="text"]:focus {
+    border-color: #ccc;
+    outline: none;
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.day-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: black;
+}
+
+.day-input {
+    flex-grow: 1;
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    resize: none;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    padding: 0;
+    margin-top: 10px;
 }

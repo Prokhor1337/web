@@ -1,183 +1,142 @@
-:root{
+:root {
     --cycle: 15s;
 }
 
-*{margin:0; padding:0; box-sizing:border-box;}
-html,body{height:100%; font-family:Arial, sans-serif;}
-
-.background{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    z-index:-10;
-    background: linear-gradient(180deg,#ffb36c,#ff7a2a,#5d1400);
-    animation: skyShift 18s ease-in-out infinite alternate;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.cloud-band{
-    position:absolute;
-    left:-10%;
-    top:12vh;
-    width:120%;
-    height:130px;
-    filter:blur(20px);
-    opacity:.35;
-    background: radial-gradient(circle,rgba(255,255,255,0.8),transparent 60%);
-    animation: cloudFloat 30s linear infinite;
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
 }
 
-.horizon{
-    position:absolute;
-    bottom:140px;
-    left:-5%;
-    width:110%;
-    height:160px;
-    background: radial-gradient(ellipse at 50% 0%,rgba(0,0,0,0.35),transparent 80%), linear-gradient(0deg,#180c06,#000);
-    opacity:.9;
-    animation:horizonPulse 6s ease infinite;
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -10;
+    background: white;
 }
 
-.ground{
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:100%;
-    height:140px;
-    background: repeating-linear-gradient(45deg,#3a1a00 0 10px,#2a0f00 10px 20px), linear-gradient(180deg,#462000,#1a0900);
-    box-shadow:0 -20px 40px rgba(0,0,0,0.5) inset;
+.cloud-band,
+.horizon,
+.ground,
+.embers {
+    display: none !important;
 }
 
-.embers{
-    position:absolute;
-    inset:0;
-    background-image:
-            radial-gradient(circle at 20% 30%,rgba(255,200,120,0.9) 0 3px,transparent 4px),
-            radial-gradient(circle at 60% 80%,rgba(255,180,100,0.9) 0 2px,transparent 3px),
-            radial-gradient(circle at 85% 20%,rgba(255,230,150,0.9) 0 3px,transparent 4px);
-    background-size:180px 180px;
-    animation: embersMove 9s linear infinite;
+.stage {
+    height: 80vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
-.stage{
-    height:80vh;
-    display:flex;
-    align-items:flex-end;
-    justify-content:center;
+.pokemon {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
-.pokemon{
-    position:relative;
-    width:220px;
-    height:220px;
-    display:flex;
-    align-items:flex-end;
-    justify-content:center;
+.flash {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 140px;
+    height: 140px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 1), rgba(255, 200, 0, 0.7) 40%, rgba(255, 100, 0, 0) 70%);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.flash{
-    position:absolute;
-    bottom:0;
-    left:50%;
-    width:140px;
-    height:140px;
-    transform:translateX(-50%);
-    background: radial-gradient(circle, rgba(255,255,255,1), rgba(255,200,0,0.7) 40%, rgba(255,100,0,0) 70%);
-    border-radius:50%;
-    opacity:0;
-    pointer-events:none;
+.flash1 {
+    animation: flashAnim var(--cycle) linear infinite;
+    animation-delay: 0s;
 }
 
-.flash1{ animation: flashAnim var(--cycle) linear infinite; animation-delay:0s; }
-.flash2{ animation: flashAnim var(--cycle) linear infinite; animation-delay: calc(var(--cycle)*0.33); }
-.flash3{ animation: flashAnim var(--cycle) linear infinite; animation-delay: calc(var(--cycle)*0.66); }
-
-.pokemon img{
-    position:absolute;
-    bottom:0;
-    left:50%;
-    transform:translateX(-50%);
-    opacity:0;
-    image-rendering:pixelated;
+.flash2 {
+    animation: flashAnim var(--cycle) linear infinite;
+    animation-delay: calc(var(--cycle)*0.33);
 }
 
-#charmander{
+.flash3 {
+    animation: flashAnim var(--cycle) linear infinite;
+    animation-delay: calc(var(--cycle)*0.66);
+}
+
+.pokemon img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    image-rendering: pixelated;
+}
+
+#charmander {
     animation: evoCharmander var(--cycle) linear infinite;
-    width:120px;
+    width: 120px;
 }
 
-#charmeleon{
+#charmeleon {
     animation: evoCharmeleon var(--cycle) linear infinite;
     animation-delay: calc(var(--cycle)*0.33);
-    width:170px;
+    width: 170px;
 }
 
-#charizard{
+#charizard {
     animation: evoCharizard var(--cycle) linear infinite;
     animation-delay: calc(var(--cycle)*0.66);
-    width:260px;
+    width: 260px;
 }
 
-@keyframes evoCharmander{
-    0%{opacity:0; transform:translateX(-50%) scale(0.7);}
-    7%{opacity:1; transform:translateX(-50%) scale(0.85);}
-    30%{opacity:1; transform:translateX(-50%) scale(0.9);}
-    33%{opacity:0;}
-    100%{opacity:0;}
+@keyframes evoCharmander {
+    0% { opacity: 0; transform: translateX(-50%) scale(0.7); }
+    7% { opacity: 1; transform: translateX(-50%) scale(0.85); }
+    30% { opacity: 1; transform: translateX(-50%) scale(0.9); }
+    33% { opacity: 0; }
+    100% { opacity: 0; }
 }
 
-@keyframes evoCharmeleon{
-    0%{opacity:0; transform:translateX(-50%) scale(0.8);}
-    7%{opacity:1; transform:translateX(-50%) scale(1.1);}
-    30%{opacity:1; transform:translateX(-50%) scale(1.2);}
-    33%{opacity:0;}
-    100%{opacity:0;}
+@keyframes evoCharmeleon {
+    0% { opacity: 0; transform: translateX(-50%) scale(0.8); }
+    7% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+    30% { opacity: 1; transform: translateX(-50%) scale(1.2); }
+    33% { opacity: 0; }
+    100% { opacity: 0; }
 }
 
-@keyframes evoCharizard{
-    0%{opacity:0; transform:translateX(-50%) scale(1.1);}
-    7%{opacity:1; transform:translateX(-50%) scale(1.4);}
-    30%{opacity:1; transform:translateX(-50%) scale(1.55);}
-    33%{opacity:0;}
-    100%{opacity:0;}
+@keyframes evoCharizard {
+    0% { opacity: 0; transform: translateX(-50%) scale(1.1); }
+    7% { opacity: 1; transform: translateX(-50%) scale(1.4); }
+    30% { opacity: 1; transform: translateX(-50%) scale(1.55); }
+    33% { opacity: 0; }
+    100% { opacity: 0; }
 }
 
-@keyframes flashAnim{
-    0%{opacity:0; transform:translateX(-50%) scale(0.3);}
-    3%{opacity:1; transform:translateX(-50%) scale(1.4);}
-    6%{opacity:0; transform:translateX(-50%) scale(1.8);}
-    100%{opacity:0;}
+@keyframes flashAnim {
+    0% { opacity: 0; transform: translateX(-50%) scale(0.3); }
+    3% { opacity: 1; transform: translateX(-50%) scale(1.4); }
+    6% { opacity: 0; transform: translateX(-50%) scale(1.8); }
+    100% { opacity: 0; }
 }
 
-@keyframes skyShift{
-    from{filter:hue-rotate(0deg);}
-    to{filter:hue-rotate(-15deg);}
-}
-
-@keyframes cloudFloat{
-    0%{transform:translateX(0);}
-    100%{transform:translateX(-10%);}
-}
-
-@keyframes embersMove{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-8px);}
-    100%{transform:translateY(0);}
-}
-
-@keyframes horizonPulse{
-    0%{transform:scaleX(1);}
-    50%{transform:scaleX(1.02);}
-    100%{transform:scaleX(1);}
-}
-
-.caption{
-    position:fixed;
-    bottom:10px;
-    left:50%;
-    transform:translateX(-50%);
-    color:white;
-    background:rgba(0,0,0,0.4);
-    padding:5px 12px;
-    border-radius:8px;
-    font-size:14px;
+.caption {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 14px;
 }
