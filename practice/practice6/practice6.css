@@ -18,14 +18,70 @@ html, body {
     inset: 0;
     overflow: hidden;
     z-index: -10;
-    background: white;
+    background: linear-gradient(
+            to bottom,
+            #0aaaec 0%,
+            #8fd0ff 45%,
+            #65d626 45%,
+            #287c06 100%
+    );
 }
 
-.cloud-band,
-.horizon,
-.ground,
-.embers {
-    display: none !important;
+.cloud {
+    position: absolute;
+    width: 120px;
+    height: 35px;
+    background: #ffffff;
+    border-radius: 20px;
+    opacity: 0.85;
+    top: 10%;
+    animation: move-cloud 15s linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 45px;
+    height: 45px;
+    top: -20px;
+    left: 15px;
+}
+
+.cloud::after {
+    width: 65px;
+    height: 65px;
+    top: -30px;
+    right: 10px;
+}
+
+.cloud-1 {
+    top: 12%;
+    transform: scale(0.8);
+    animation-delay: -3s;
+}
+
+.cloud-2 {
+    top: 5%;
+    transform: scale(1.1);
+    animation-duration: 20s;
+    animation-delay: -10s;
+}
+
+.cloud-3 {
+    top: 20%;
+    transform: scale(0.6);
+    animation-duration: 12s;
+}
+
+@keyframes move-cloud {
+    0% { left: -160px; }
+    100% { left: 100%; }
 }
 
 .stage {
