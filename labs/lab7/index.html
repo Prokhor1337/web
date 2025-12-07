@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year 2025</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="page">
+
+<img src="img/snow.png" alt="" class="page__snow">
+
+<header class="header">
+    <h1 class="header__title">New Year 2026</h1>
+</header>
+
+<section class="card">
+    <img src="img/tree.png" alt="tree" class="card__tree">
+
+    <h2 class="card__title">З Новим Роком!</h2>
+
+    <p class="card__text">
+        Нехай 2026 рік принесе тобі радість, успіх, тепло та виконання найзаповітніших бажань!
+    </p>
+
+    <button class="card__button" id="sendButton">Надіслати другу</button>
+</section>
+
+<script>
+    document.getElementById("sendButton").addEventListener("click", () => {
+        alert("Посилання на листівку скопійовано!");
+        navigator.clipboard.writeText(window.location.href);
+    });
+</script>
+
+</body>
+</html>

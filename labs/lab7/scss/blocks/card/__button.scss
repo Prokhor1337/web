@@ -1,0 +1,10 @@
+.card__button {
+  @include button;
+  background: $color-accent;
+  color: $color-white;
+  transition: .3s;
+
+  &:hover {
+    background: darken($color-accent, 10%);
+  }
+}
