@@ -1,4 +1,3 @@
-/* === PRACTICE 1 STYLES === */
 
 html, body {
     height: 100%;
@@ -14,14 +13,12 @@ body {
     color: #333;
 }
 
-/* Головна частина сторінки */
 main {
     flex: 1;
     padding: 20px;
     padding-bottom: 60px;
 }
 
-/* Шапка */
 header {
     background: rgba(255, 20, 147, 0.53);
     color: #fff;
@@ -34,7 +31,6 @@ header h1 {
     margin: 0;
 }
 
-/* Навігація */
 nav ul {
     list-style: none;
     margin: 0;
@@ -57,7 +53,6 @@ nav ul li a:hover {
     color: white;
 }
 
-/* Таблиці */
 table {
     width: 80%;
     margin: 20px auto;
@@ -85,7 +80,6 @@ tr:nth-child(even) td {
     background: #f9f9f9;
 }
 
-/* Кнопка */
 button, .btn {
     background: rgba(255, 20, 147, 0.53);
     color: white;
